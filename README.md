@@ -34,7 +34,7 @@ We also built examples using codebase [nanoGPT](https://github.com/karpathy/nano
 nanoGPT/run_example.sh
 ```
 
-Our experiments show that dist-sign-momentum consistently outperforms the built-in [SlowMo](https://arxiv.org/abs/1910.00643) method (with the same momery cost) in distributed training of GPT-2 Transformer models with multiple local steps. This makes our algorithm particularly well-suited for scenarios where communication is prohibitive and reducing synchronization frequency is essential. This table shows the improvement from our method compared to SlowMo in terms of validation losses and transcribed perpelexity. 
+Our experiments show that DSM-LS consistently outperforms the built-in [SlowMo](https://arxiv.org/abs/1910.00643) method (with the same momery cost) in distributed training of GPT-2 Transformer models with multiple local steps. This makes our algorithm particularly well-suited for scenarios where communication is prohibitive and reducing synchronization frequency is essential. This table shows the improvement from our method compared to SlowMo in terms of validation losses and transcribed perpelexity. 
 
 <p align="center">
   <img width="717" alt="image" src="https://github.com/user-attachments/assets/f8b4aa9f-9abc-4135-98de-8540a2390b26" />
