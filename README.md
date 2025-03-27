@@ -1,6 +1,6 @@
 # Introduction
 
-This repository contains the implementations for the distributed sign momentum algorithm in our paper: [Distributed Sign Momentum with Local Steps for Training Transformers](https://arxiv.org/abs/2411.17866). We implemented our algorithm in the [fairscale](https://github.com/facebookresearch/fairscale) framework. You can install the modified fairscale from source. 
+This repository contains the implementations for the distributed sign momentum algorithm with local steps (DSM-LS) in our paper: [Distributed Sign Momentum with Local Steps for Training Transformers](https://arxiv.org/abs/2411.17866). We implemented our algorithm in the [fairscale](https://github.com/facebookresearch/fairscale) framework, and the global optimizer is distributed across GPUs for memory efficiency. You can install the modified fairscale from source. 
 ```python
 git clone git@github.com:shuhuayu/dist-sign-momentum.git
 cd fairscale
@@ -34,7 +34,7 @@ We also built examples using codebase [nanoGPT](https://github.com/karpathy/nano
 nanoGPT/run_example.sh
 ```
 
-Our experiments show that dist-sign-momentum consistently outperforms than the built-in [SlowMo](https://arxiv.org/abs/1910.00643) method in distributed training of GPT-2 models with multiple local steps. This makes our algorithm particularly well-suited for scenarios where communication is prohibitive and reducing synchronization frequency is essential. This table shows the improvement from our method compared to SlowMo in terms of validation losses and transcribed perpelexity. 
+Our experiments show that dist-sign-momentum consistently outperforms the built-in [SlowMo](https://arxiv.org/abs/1910.00643) method (with the same momery cost) in distributed training of GPT-2 Transformer models with multiple local steps. This makes our algorithm particularly well-suited for scenarios where communication is prohibitive and reducing synchronization frequency is essential. This table shows the improvement from our method compared to SlowMo in terms of validation losses and transcribed perpelexity. 
 
 <p align="center">
   <img width="717" alt="image" src="https://github.com/user-attachments/assets/f8b4aa9f-9abc-4135-98de-8540a2390b26" />
